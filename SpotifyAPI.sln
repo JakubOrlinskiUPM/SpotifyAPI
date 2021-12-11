@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SpotifyAPI.API", ".\SpotifyAPI.API\SpotifyAPI.API.csproj", "{281BDAC2-ECCA-42DF-9FFA-FAE9932B2021}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SpotifyAPI.Core", ".\SpotifyAPI.Core\SpotifyAPI.Core.csproj", "{70FC83E7-B81F-4126-8007-6694ED429326}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SpotifyAPI.Migrations", ".\SpotifyAPI.Migrations\SpotifyAPI.Migrations.csproj", "{1ED98B5A-02B1-4994-A714-D2959206F0E3}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{281BDAC2-ECCA-42DF-9FFA-FAE9932B2021}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{281BDAC2-ECCA-42DF-9FFA-FAE9932B2021}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{281BDAC2-ECCA-42DF-9FFA-FAE9932B2021}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{281BDAC2-ECCA-42DF-9FFA-FAE9932B2021}.Release|Any CPU.Build.0 = Release|Any CPU
+		{70FC83E7-B81F-4126-8007-6694ED429326}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{70FC83E7-B81F-4126-8007-6694ED429326}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{70FC83E7-B81F-4126-8007-6694ED429326}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{70FC83E7-B81F-4126-8007-6694ED429326}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1ED98B5A-02B1-4994-A714-D2959206F0E3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1ED98B5A-02B1-4994-A714-D2959206F0E3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1ED98B5A-02B1-4994-A714-D2959206F0E3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1ED98B5A-02B1-4994-A714-D2959206F0E3}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
