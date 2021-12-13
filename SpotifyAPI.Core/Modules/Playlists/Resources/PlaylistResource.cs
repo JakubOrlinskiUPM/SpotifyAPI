@@ -1,3 +1,4 @@
+using System;
 using SpotifyAPI.Core.Identity.Resources;
 
 namespace SpotifyAPI.Core.Modules.Playlist.Resources;

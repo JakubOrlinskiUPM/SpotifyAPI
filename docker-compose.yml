@@ -2,27 +2,44 @@ version: '3.7'
 
 services:
   app:
-    build: SpotifyAPI.API/
+    build: 
+      context: ./
+      dockerfile: SpotifyAPI.API/Dockerfile
+    container_name: spotify-api-app
     ports:
       - "8000:80"
     depends_on:
       - minio
       - db
+      - redis
+
   db:
-    image: "mcr.microsoft.com/mssql/server"
+    image: mysql/mysql-server:latest-aarch64
+    container_name: spotify-api-db
+    command: --default-authentication-plugin=mysql_native_password
+    ports:
+      - "3306:3306"
     environment:
-      SA_PASSWORD: "Your_password123"
-      ACCEPT_EULA: "Y"
+      MYSQL_ROOT_PASSWORD: "Password123!"
+      MYSQL_ROOT_HOST: "%"
+
+  redis:
+    container_name: spotify-api-redis
+    image: redis:latest
 
   minio:
     image: minio/minio:latest
-    container_name: minio-s3
+    container_name: spotify-api-minio
+    environment:
+      MINIO_ROOT_USER: root
+      MINIO_ROOT_PASSWORD: Password123!
     ports:
       - "9000:9000"
       - "9001:9001"
     volumes:
-      - minio-data:~/Projects/minio
+      - data:/Users/jakuborlinski/Projects/minio
+    command: ["server", '--console-address', ':9001', "/data"]
 
 volumes:
-  minio-data:
-    name: minio-data
+  data:
+    name: data

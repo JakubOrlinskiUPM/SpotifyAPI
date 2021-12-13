@@ -1,3 +1,6 @@
+using System;
+using System.Collections.Generic;
+
 namespace SpotifyAPI.Core.Database.Pagination;
 
 public class Paginated<T> where T : class

@@ -1,6 +1,6 @@
 using Autofac;
 
-namespace SpotifyAPI.Core.Modules.Playlist;
+namespace SpotifyAPI.Core.Modules.Playlists;
 
 public class PlaylistModule : Module
 {

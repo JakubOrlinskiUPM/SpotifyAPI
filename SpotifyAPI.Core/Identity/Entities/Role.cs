@@ -1,3 +1,4 @@
+using System;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
@@ -7,7 +8,6 @@ namespace SpotifyAPI.Core.Identity.Entities;
 public class Role : IdentityRole<Guid>
 {
     public const string User = "User";
-    public const string Agent = "Agent";
 
     public class Configuration : IEntityTypeConfiguration<Role>
     {

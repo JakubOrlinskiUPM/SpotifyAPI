@@ -1,3 +1,5 @@
+using System;
+
 namespace SpotifyAPI.Core.Identity.Resources;
 
 public record UserResource

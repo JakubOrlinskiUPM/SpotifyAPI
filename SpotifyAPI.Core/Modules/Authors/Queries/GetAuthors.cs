@@ -1,20 +1,25 @@
-using MassTransit;
+using System.Threading.Tasks;
 using Mapster;
+using MassTransit;
 using Microsoft.AspNetCore.Authorization;
-using SpotifyAPI.Core.Modules.Playlist.Resources;
+using Microsoft.EntityFrameworkCore;
+using SpotifyAPI.Core.Database;
+using SpotifyAPI.Core.Database.Pagination;
+using SpotifyAPI.Core.Identity.Entities;
+using SpotifyAPI.Core.Modules.Authors.Resources;
 
-namespace SpotifyAPI.Core.Modules.Playlist.Queries;
+namespace SpotifyAPI.Core.Modules.Authors.Queries;
 
-public static class GetPlaylists
+public static class GetAuthors
 {
     public static AuthorizationPolicy Policy { get; } = new AuthorizationPolicyBuilder()
         .RequireAuthenticatedUser()
-        .RequireRole(Role.Agent)
+        .RequireRole(Role.User)
         .Build();
 
     public class Request : QueryModel { }
 
-    public class Response : Paginated<PlaylistResource> { }
+    public class Response : Paginated<AuthorResource> { }
 
     public class Handler : IConsumer<Request>
     {
@@ -27,9 +32,9 @@ public static class GetPlaylists
 
         public async Task Consume (ConsumeContext<Request> context)
         {
-            var result = await _db.Set<Entities.Playlist>()
+            var result = await _db.Set<Entities.Author>()
                 .AsNoTracking()
-                .PaginateAs<Entities.Playlist, PlaylistResource>(context.Message);
+                .PaginateAs<Entities.Author, AuthorResource>(context.Message);
 
             await context.RespondAsync(result.Adapt<Response>());
         }

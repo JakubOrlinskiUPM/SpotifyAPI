@@ -1,3 +1,7 @@
+using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Linq;
 using Autofac;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.Extensions.Configuration;
@@ -23,7 +27,7 @@ public class Startup
     // This method gets called by the runtime. Use this method to add services to the container.
     public void ConfigureServices(IServiceCollection services)
     {
-        services.AddSpotifyAPI(Configuration);
+        services.AddSpotifyApi(Configuration);
         services.AddSwaggerGen(
             c =>
             {
@@ -95,6 +99,6 @@ public class Startup
 
         app.UseRouting();
 
-        app.UseNimbus(env);
+        app.UseSpotifyApi(env);
     }
 }

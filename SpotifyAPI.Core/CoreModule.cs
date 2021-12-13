@@ -8,6 +8,7 @@ using SpotifyAPI.Core.Identity;
 using SpotifyAPI.Core.Validation;
 using Opw.HttpExceptions.AspNetCore.Mappers;
 using SpotifyAPI.Core.Modules.Playlist;
+using SpotifyAPI.Core.Modules.Playlists;
 
 
 namespace SpotifyAPI.Core
